@@ -1,0 +1,12 @@
+{
+  "name": "llm-control-context",
+  "private": true,
+  "workspaces": [
+    "apps/frontend",
+    "packages/*"
+  ],
+  "scripts": {
+    "frontend:install": "npm install --workspace @llm-control-context/frontend",
+    "frontend:build": "npm run build --workspace @llm-control-context/frontend"
+  }
+}
