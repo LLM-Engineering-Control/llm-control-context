@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Experiment Rules
+    url: https://github.com/LLM-Engineering-Control/llm-control-context
+    about: Compare issues using the agreed experiment rules and metrics.

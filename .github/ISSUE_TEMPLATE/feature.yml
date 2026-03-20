@@ -1,0 +1,98 @@
+name: Feature
+description: 기능 구현 이슈
+title: "[FEATURE] "
+labels:
+  - feature
+body:
+  - type: input
+    id: issue_id
+    attributes:
+      label: Issue ID
+      description: 프롬프트 레포와 동일한 번호를 사용합니다.
+      placeholder: 001
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: 구현할 기능을 한두 문장으로 설명합니다.
+      placeholder: 사용자 로그인 API와 로그인 화면을 구현한다.
+    validations:
+      required: true
+  - type: textarea
+    id: requirement
+    attributes:
+      label: Requirement
+      description: 요구사항을 구체적으로 적습니다.
+      placeholder: |
+        - 이메일과 비밀번호로 로그인한다.
+        - 성공 시 토큰을 반환한다.
+        - 실패 시 표준 에러 응답을 반환한다.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: 완료 조건을 체크 가능한 형태로 작성합니다.
+      placeholder: |
+        - [ ] 로그인 API가 동작한다.
+        - [ ] 프론트 로그인 폼이 동작한다.
+        - [ ] 테스트가 추가된다.
+    validations:
+      required: true
+  - type: textarea
+    id: context_refs
+    attributes:
+      label: Context References
+      description: 이 이슈에서 Codex가 참고해야 할 문서를 명시합니다.
+      placeholder: |
+        - docs/context/domain-model.md
+        - docs/context/backend-conventions.md
+        - docs/context/api-conventions.md
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: 구현 시 반드시 지켜야 할 제약사항을 적습니다.
+      placeholder: |
+        - Java 21, Spring Boot 사용
+        - React + TypeScript 사용
+        - 기존 패키지 구조 유지
+  - type: textarea
+    id: test_plan
+    attributes:
+      label: Test Plan
+      description: 어떤 방식으로 검증할지 작성합니다.
+      placeholder: |
+        - backend test
+        - frontend build
+        - manual login flow check
+    validations:
+      required: true
+  - type: dropdown
+    id: experiment_type
+    attributes:
+      label: Experiment Type
+      options:
+        - Context Engineering
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics To Record
+      description: 완료 후 기록할 측정 항목입니다.
+      value: |
+        - input tokens
+        - output tokens
+        - hallucination count
+        - convention violation count
+        - rework cycles
+        - human intervention count
+    validations:
+      required: true
+

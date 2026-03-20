@@ -1,0 +1,65 @@
+name: Bug
+description: 버그 수정 이슈
+title: "[BUG] "
+labels:
+  - bug
+body:
+  - type: input
+    id: related_issue
+    attributes:
+      label: Related Issue ID
+      description: 관련 기능 이슈 번호를 적습니다.
+      placeholder: 001
+    validations:
+      required: true
+  - type: textarea
+    id: bug_summary
+    attributes:
+      label: Bug Summary
+      description: 문제를 간단히 설명합니다.
+      placeholder: 로그인 실패 시 잘못된 상태 코드가 반환된다.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction Steps
+      description: 재현 절차를 순서대로 적습니다.
+      placeholder: |
+        1. 로그인 화면 진입
+        2. 잘못된 비밀번호 입력
+        3. 응답 확인
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      placeholder: 401 응답과 표준 에러 메시지가 반환되어야 한다.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      placeholder: 500 응답이 반환된다.
+    validations:
+      required: true
+  - type: textarea
+    id: context_refs
+    attributes:
+      label: Context References
+      description: 참고할 문서를 적습니다.
+      placeholder: |
+        - docs/context/backend-conventions.md
+        - docs/context/api-conventions.md
+  - type: textarea
+    id: validation_plan
+    attributes:
+      label: Validation Plan
+      placeholder: |
+        - failing test 추가
+        - 수정 후 테스트 재실행
+    validations:
+      required: true
+

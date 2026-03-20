@@ -1,0 +1,54 @@
+name: Experiment Review
+description: 동일 이슈의 context/prompt 결과 비교
+title: "[REVIEW] "
+labels:
+  - experiment-review
+body:
+  - type: input
+    id: issue_id
+    attributes:
+      label: Issue ID
+      placeholder: 001
+    validations:
+      required: true
+  - type: input
+    id: context_pr
+    attributes:
+      label: Context PR
+      placeholder: "#12"
+    validations:
+      required: true
+  - type: input
+    id: prompt_pr
+    attributes:
+      label: Prompt PR
+      placeholder: organization/llm-control-prompt#12
+    validations:
+      required: true
+  - type: textarea
+    id: comparison
+    attributes:
+      label: Comparison Summary
+      placeholder: 두 구현의 차이, 안정성, 일관성을 요약합니다.
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics Comparison
+      placeholder: |
+        - delivery time:
+        - token usage:
+        - hallucinations:
+        - convention violations:
+        - rework cycles:
+    validations:
+      required: true
+  - type: textarea
+    id: conclusion
+    attributes:
+      label: Conclusion
+      placeholder: 다음 이슈에 반영할 교훈을 정리합니다.
+    validations:
+      required: true
+
